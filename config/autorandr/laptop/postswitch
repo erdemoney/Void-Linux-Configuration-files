@@ -1,4 +1,7 @@
 #!/bin/sh
 
-#fix polybar
-~/.config/polybar/launch_polybar.sh
+# fix polybar
+# ~/.config/polybar/launch_polybar.sh
+
+# fix spectrwm gaps (runs refresh binding)
+xdotool key "Super_L+Shift+R"

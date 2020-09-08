@@ -3,23 +3,23 @@ configuration {
     display-window:                 "Window";
     show-icons:true;
 }
- 
+
 * {
     columns: 1;
-    background-color: #00000065;
+    background-color: #2f343f;
     border-color: #00000000;
     text-color: #EFEFEF;
     font: "SF UI Text 16";
 }
- 
+
 #window {
     border: 0;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 40;
     width: 30%;
     height: 10%;
 }
- 
+
 #mainbox {
     background-color: #00000000;
     children: [inputbar, listview];
@@ -29,12 +29,12 @@ configuration {
     border: 1px;
     border-color: @base0D;
 }
- 
+
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry ];
     background-color: #00000000;
 }
- 
+
 #entry {
     background-color: #00000000;
     spacing:    0;
@@ -43,10 +43,11 @@ configuration {
     background-color: #00000000;
     spacing:    0;
 }
- 
+
 #textbox-prompt-colon {
     background-color: #00000000;
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
 }
+/* vim:ft=css

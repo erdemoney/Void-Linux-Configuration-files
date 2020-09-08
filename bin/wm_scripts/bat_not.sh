@@ -6,12 +6,14 @@ check_interval=5
 low_battery_threshold=25
 hibernate_percentage=5
 battery_icon="/usr/share/icons/Paper/48x48/notifications/notification-battery-low.svg"
+battery_dead_icon="/usr/share/icons/Paper/48x48/notifications/notification-battery-caution-symbolic.svg"
 
 function notify {
     battery_percentage=$(cat /sys/class/power_supply/BAT0/capacity)
     if [ "$battery_percentage" -lt "$hibernate_percentage" ]; then
-        echo "dead"
-        #sudo ZZZ # must have ZZZ as NOPASSWD in sudoers file
+        dunstify -t 2000 -i $battery_dead_icon -r 7777 -u critical "Battery is very low" "Hibernating in 60 seconds"
+        sleep 60
+        sudo ZZZ # must have ZZZ as NOPASSWD in sudoers file
     fi
     if [ "$battery_percentage" -le "$1" ]; then
         dunstify -t 2000 -i $battery_icon -r 7777 -u critical "Battery is low" "only $battery_percentage% left"

@@ -13,6 +13,8 @@ Plug 'Shougo/deoplete-clangx'
 
 Plug 'junegunn/goyo.vim'
 
+Plug 'ap/vim-css-color'
+
 "LaTeX Plugins
 "Plug 'lervag/vimtex'
 
@@ -67,7 +69,7 @@ set expandtab               " Insert spaces when TAB is pressed.
 set tabstop=4               " Render TABs using this many spaces.
 set shiftwidth=4            " Indentation amount for < and > commands.
 set title                   " Show current file as window title
-set clipboard+=unnamedplus  " Set vim clipboard to system clipboard
+set clipboard+=unnamedplus " Set vim clipboard to system clipboard
 
 
 "Hide mode so its not duplicated in Airline

@@ -7,7 +7,7 @@ configuration {
 * {
     lines: 6;
     columns: 1;
-    background-color: #00000065;
+    background-color: #2f343f;
     border-color: #00000000;
     text-color: #EFEFEF;
     font: "SF UI Text 16";
@@ -15,7 +15,7 @@ configuration {
  
 #window {
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 40;
     width: 20%;
 }

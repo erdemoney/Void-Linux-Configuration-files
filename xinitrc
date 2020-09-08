@@ -30,10 +30,14 @@ amixer -q sset Master 30%
 dunst &
 
 # start low battery notification script
+#          low battery threshold
 bat_not.sh 25 &
 
 # Start wifi notification script
 wifi_not.sh &
+
+# Run update notification script
+updates.sh &
 
 # start music player daemon
 mpd &
@@ -54,11 +58,11 @@ picom --experimental-backends -b
 autorandr --change
 
 # configure locker
-#          dim     lock
+#          dim(s)  lock(s)
 xset s     240     20
 
-# transfer sleep lock?
-xss-lock -n ~/.bin/wm_scripts/dim-screen.sh -- betterlockscreen -l &
+# Start auto locker
+xss-lock -n ~/.bin/wm_scripts/dim-screen.sh -- lock.sh &
 
 # exec window manager securely to prevent TTY access && start locker
 exec dbus-launch --exit-with-session $WM

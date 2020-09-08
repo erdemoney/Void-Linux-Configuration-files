@@ -50,7 +50,7 @@ settings:
   statusbar.show:
     global: never
   tabs.show:
-    global: switching
+    global: always
   url.searchengines:
     global:
       DEFAULT: https://www.startpage.com/do/dsearch?query={}

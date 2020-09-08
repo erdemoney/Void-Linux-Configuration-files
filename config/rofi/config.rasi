@@ -16,7 +16,7 @@ configuration {
 
 #window {
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 40;
     width: 30%;
     height: 50%;
@@ -79,3 +79,4 @@ configuration {
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
 }
+/* vim:ft=css
