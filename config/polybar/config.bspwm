@@ -1,0 +1,174 @@
+;=====================================================
+;                  POLYBAR CONFIG
+;=====================================================
+
+[colors]
+transparent = #00000000
+background = #000000
+foreground = #dcdcdc
+
+red = #e53935
+green = #43a047
+amber = #ffb300
+grey = #757575
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[bar/main]
+monitor = ${env:MONITOR:}
+monitor-strict = true
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = SF Pro Display:size=10:weight=Regular
+font-1 = FontAwesome:size=10;0
+
+modules-left = i3
+modules-center = date
+modules-right = gmail volume network battery
+tray-position = right
+tray-padding = 0 
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-detached = false
+
+underline-size = 3
+overline-size = 3
+
+#TODO: fix weird spacing
+spacing = 0
+padding-left = 1
+padding-right = 3
+module-margin-left = 3
+module-margin-right = 3
+
+fixed-center = true
+
+#TODO: Figure out what all this does
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+
+format = <label-state> <label-mode>
+
+label-mode-foreground = ${colors.red}
+label-mode-background = ${colors.background}
+label-mode-padding = 1
+
+label-focused-underline = #ddd
+label-focused-padding = 1
+label-focused-font = 3
+
+label-unfocused-padding = 1
+label-unfocused-font = 1
+
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+label-urgent-font = 3
+
+label-visible-foreground = ${colors.green}
+label-visible-padding = 1
+label-visible-font = 1
+
+label-separator = " "
+label-separator-padding = 1
+
+label-font = 1
+
+[module/volume]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+master-mixer = Master
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+
+headphone-id = 14
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted =  
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+
+ramp-headphones-0 = 
+[module/date]
+type = internal/date
+interval = 60
+
+date = "  %A, %b %d | %H:%M"
+
+format-padding = 0
+label = "%date%"
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/gmail/launch.py -ns
+tail = true
+click-left = xdg-open https://mail.google.com
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+interval = 5
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected =  %local_ip%
+label-disconnected = no wifi
+format-padding = 0
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+time-format = %_Hh
+adapter = AC
+full-at = 100
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% (%time%)
+
+format-full-prefix = "  "
+format-full-padding = 0
+format-charging-padding = 0
+format-discharging-padding = 0
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.amber}
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/polybar_bluetooth.sh
+tail = true
+click-left = ~/.bin/polybar_bluetooth.sh --toggle
+
+; vim:ft=dosini

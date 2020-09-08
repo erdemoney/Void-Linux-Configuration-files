@@ -1,0 +1,4 @@
+#! /bin/bash
+id=$(xdg-mime query filetype $1)
+xdg-mime query default $id
+xdg-mime default $(ls /usr/share/applications/ | fzy) $id 

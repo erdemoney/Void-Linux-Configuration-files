@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while true
+do
+	sleep 45m
+	notify-send "Time to rest\!"
+	sleep 5m
+	notify-send "Time to get back to work\!"
+done

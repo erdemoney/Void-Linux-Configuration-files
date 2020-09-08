@@ -1,0 +1,44 @@
+#! /bin/zsh
+
+# Aliases
+alias bat="cat /sys/class/power_supply/BAT0/capacity"
+alias packages="xbps-query -l | wc -l"
+alias email="neomutt"
+alias notes="sncli"
+alias vim="nvim"
+alias wifi="nmcli device wifi"
+alias ping="prettyping"
+alias dd="dd status=progress"
+alias tcn="trash-put"
+#alias rm='echo "This is not the command you are looking for."; false'
+alias rmake='reset && make'
+alias ls='ls --color'
+alias nnn='nnn -H'
+
+# confirmation
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# functions
+
+function proxy() {
+    ssh -D $1 -N jaguar &
+    qutebrowser -T -s content.proxy socks://localhost:$1/ infosec.csuchico.edu &
+}
+
+function gcal {
+    case $1 in
+      ("-m") gcalcli calm ;;
+      ("-w") gcalcli calw ;;
+      ("-a") gcalcli add ;;
+      ("-qa") gcalcli quick ;;
+      (*) gcalcli "$@" ;;
+    esac
+}
+
+function tidal {
+    wd=$(pwd)
+    (cd ~/Music && tidal-dl)
+    cd $wd
+}

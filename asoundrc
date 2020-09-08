@@ -1,0 +1,56 @@
+# Pre-amp for volume boost
+#https://alien.slackbook.org/blog/adding-an-alsa-software-pre-amp-to-fix-low-sound-levels/
+
+pcm.!default {
+      type plug
+      slave.pcm "softvol"
+  }
+
+  pcm.softvol {
+      type softvol
+      slave {
+          pcm "dmix"
+      }
+      control {
+          name "Pre-Amp"
+          card 0
+      }
+      min_dB -5.0
+      max_dB 18.0
+      resolution 6
+  }
+
+# Configure Koss KSC35 headphones
+pcm.koss {
+        type plug
+        slave.pcm {
+                type bluealsa
+                device "00:00:00:00:00:DE"
+                profile "a2dp"
+        }
+        hint {
+                show on
+                description "Koss KSC35 Wireless"
+        }
+}
+
+# Configure Bose Soundlink II Mini
+pcm.bose {
+        type plug
+        slave.pcm {
+                type bluealsa
+                device "04:52:C7:1E:F7:56"
+                profile "a2dp"
+        }
+        hint {
+                show on
+                description "Bose Soundlink II Mini"
+        }
+}
+
+# Configure USB amp/DAC
+pcm.usb {
+    type hw
+    card 1
+    device 0
+}

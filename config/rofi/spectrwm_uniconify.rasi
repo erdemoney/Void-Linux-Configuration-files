@@ -1,0 +1,32 @@
+* {
+    background-color:      Black;
+    border-color:          White;
+    text-color:           White;
+    font:            "SF Pro Display 10";
+}
+
+#window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    padding:    2px;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ listview ];
+}
+
+#listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+
+#element {
+    padding: 0px 2px;
+}
+#element selected {
+    background-color: SteelBlue;
+}

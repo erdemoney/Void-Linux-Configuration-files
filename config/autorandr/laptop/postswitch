@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#fix polybar
+~/.config/polybar/launch_polybar.sh
