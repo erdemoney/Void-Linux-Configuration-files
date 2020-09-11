@@ -8,8 +8,8 @@ do
     if [ $connected -eq 0 ] && [ -n "$message" ]; then
         dunstify -t 2000 -i $wifi_icon -r 6666 -u normal "Wifi Connected" "$message"
         connected=1
-    elif [ -z $message ]; then
-        connected=0
+    #elif [ $message -eq "" ]; then
+    #    connected=0
     fi
     sleep 5s
 done

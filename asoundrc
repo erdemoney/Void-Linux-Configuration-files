@@ -16,7 +16,7 @@ pcm.!default {
           card 0
       }
       min_dB -5.0
-      max_dB 18.0
+      max_dB 15.0
       resolution 6
   }
 

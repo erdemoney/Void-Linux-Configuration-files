@@ -34,7 +34,7 @@ dunst &
 bat_not.sh 25 &
 
 # Start wifi notification script
-wifi_not.sh &
+# wifi_not.sh &
 
 # Run update notification script
 updates.sh &
@@ -62,7 +62,7 @@ autorandr --change
 xset s     240     20
 
 # Start auto locker
-xss-lock -n ~/.bin/wm_scripts/dim-screen.sh -- lock.sh &
+xss-lock -n ~/.bin/wm_scripts/dim-screen.sh -l lock.sh &
 
 # exec window manager securely to prevent TTY access && start locker
 exec dbus-launch --exit-with-session $WM

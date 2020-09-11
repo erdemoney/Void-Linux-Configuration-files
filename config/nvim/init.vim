@@ -15,6 +15,14 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'ap/vim-css-color'
 
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'JamshedVesuna/vim-markdown-preview'
+
+Plug 'reedes/vim-pencil'
+
+Plug 'mhinz/vim-startify'
+
 "LaTeX Plugins
 "Plug 'lervag/vimtex'
 
@@ -48,6 +56,21 @@ let NERDTreeIgnore = ['\.o$']
 let NERDTreeQuitOnOpen=1
 let NERDTreeNaturalSort = 1
 let NERDTreeMinimalUI = 1
+
+"Startify settings
+let g:startify_custom_header = [
+\ '      ___           ___           ___                                    ___     ',
+\ '     /__/\         /  /\         /  /\          ___        ___          /__/\    ',
+\ '     \  \:\       /  /:/_       /  /::\        /__/\      /  /\        |  |::\   ',
+\ '      \  \:\     /  /:/ /\     /  /:/\:\       \  \:\    /  /:/        |  |:|:\  ',
+\ '  _____\__\:\   /  /:/ /:/_   /  /:/  \:\       \  \:\  /__/::\      __|__|:|\:\ ',
+\ ' /__/::::::::\ /__/:/ /:/ /\ /__/:/ \__\:\  ___  \__\:\ \__\/\:\__  /__/::::| \:\',
+\ ' \  \:\~~\~~\/ \  \:\/:/ /:/ \  \:\ /  /:/ /__/\ |  |:|    \  \:\/\ \  \:\~~\__\/',
+\ '  \  \:\  ~~~   \  \::/ /:/   \  \:\  /:/  \  \:\|  |:|     \__\::/  \  \:\      ',
+\ '   \  \:\        \  \:\/:/     \  \:\/:/    \  \:\__|:|     /__/:/    \  \:\     ',
+\ '    \  \:\        \  \::/       \  \::/      \__\::::/      \__\/      \  \:\    ',
+\ '     \__\/         \__\/         \__\/           ~~~~                   \__\/    ',
+\ ]
 
 "LaTeX Settings
 "let g:tex_flavor  = 'latex'

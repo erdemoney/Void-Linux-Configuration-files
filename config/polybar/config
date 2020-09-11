@@ -36,7 +36,7 @@ font-1 = Material Design Icons:size=12;0
 
 modules-left = spectrwm
 modules-center = date
-modules-right = mpd gmail volume network battery
+modules-right = polypomo mpd gmail volume network battery
 tray-position = right
 tray-padding = 0
 tray-background = ${colors.background}
@@ -48,7 +48,7 @@ overline-size = 3
 
 ;TODO: fix weird spacing
 spacing = 0
-padding-left = 1
+padding-left = 3
 padding-right = 3
 module-margin-left = 3
 module-margin-right = 3
@@ -56,6 +56,7 @@ module-margin-right = 3
 fixed-center = true
 
 [module/spectrwm]
+;https://github.com/polybar/polybar/wiki/Module:-xworkspaces
 type = internal/xworkspaces
 pin-workspaces = true
 
@@ -66,10 +67,7 @@ format = <label-state>
 label-empty =
 label-active = %icon% %name%
 
-label-active-padding = 2
-label-urgent-padding = 2
-label-occupied-padding = 2
-label-empty-padding = 2
+label-active-padding = 1
 
 [module/volume]
 ;https://github.com/polybar/polybar/wiki/Module:-alsa
@@ -97,7 +95,6 @@ interval = 60
 
 date = "󰭦  %A, %b %d     󱑎  %H:%M"
 
-format-padding = 0
 label = "%date%"
 
 [module/gmail]
@@ -109,7 +106,7 @@ click-left = scratchpad_app "__email" neomutt 640 480
 [module/polypomo]
 type = custom/script
 
-exec = ~/.config/polybar/polypomo
+exec = ~/.config/polybar/polypomo --worktime 1800 --breaktime 1800
 tail = true
 
 label = %output%
@@ -135,10 +132,7 @@ interval = 5.0
 format-connected = <ramp-signal>
 format-disconnected = <label-disconnected>
 
-label-connected = %essid%
 label-disconnected = 󰤮
-
-format-padding = 0
 
 ramp-signal-font = 2
 ramp-signal-0 = 󰤯
@@ -160,10 +154,6 @@ format-charging = <animation-charging>
 format-discharging = <ramp-capacity>
 
 format-full-prefix = "󰂄  "
-format-full-padding = 0
-format-charging-padding = 0
-format-discharging-padding = 0
-
 
 ramp-capacity-0 = 󰁺
 ramp-capacity-1 = 󰁻
